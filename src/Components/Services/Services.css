@@ -1,0 +1,190 @@
+/* Black Theme - Law Firm Service Page Layout */
+.service-page {
+  padding: 2rem;
+  background-color: #000000; /* Dark background */
+  color: #e0e0e0; /* Light text for contrast */
+  display: flex;
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Centers the content vertically */
+  flex-direction: column; /* Stacks the sections vertically */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add Background Animation */
+.service-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  animation: backgroundAnimation 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(50%) translateX(50%);
+  }
+  100% {
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px; /* Restrict width to keep content narrow */
+  width: 100%;
+  z-index: 1;
+}
+
+.hero-section h1 {
+  font-size: 2.8rem;
+  color: #ffffff; /* Bright white for title */
+  font-family: "Playwrite DE Grund", cursive;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #b0b0b0; /* Lighter gray for paragraph text */
+  animation: fadeInText 1.2s ease-in-out forwards;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Service Cards */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Align services in the middle */
+  gap: 5rem;
+  max-width: 1000px; /* Maximum width for services container */
+  width: 100%;
+  z-index: 1;
+}
+
+.service-card {
+  background-color: #1f1f1f; /* Dark gray for cards */
+  border-radius: 15px;
+  padding: 2rem;
+  width: 25%; /* Each card takes up 30% of the width */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInCard 1s ease-in-out forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.service-card:hover::after {
+  opacity: 1;
+}
+
+.service-card:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Glow effect */
+  transform: translateY(-15px);
+  border: 1px solid #ff7c25;
+}
+
+.service-card h2 {
+  font-size: 2rem;
+  color: #e3dddc; /* Accent color for headings */
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-family: "Saira Condensed", sans-serif;
+  letter-spacing: 2px;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #b0b0b0; /* Lighter text */
+}
+
+.service-icon {
+  font-size: 3.5rem;
+  color: #ff7c25; /* Accent color for icons */
+  margin-bottom: 1rem;
+}
+
+/* Button Styling */
+.custom-button {
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-family: "Saira Condensed", sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 111, 97, 0.3);
+}
+
+.custom-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 111, 97, 0.5);
+}
+
+/* Animations */
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 90%; /* Take more space on smaller screens */
+  }
+}

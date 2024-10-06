@@ -1,0 +1,241 @@
+/* General Page Styles */
+.about-us {
+  font-family: "Arial", sans-serif;
+  background-color: #111; /* Dark theme background */
+  color: #f9f9f9;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Hero Section */
+.about-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../../assets/images/law-bg.jpg") center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f9f9f9;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInHero 2s ease-in-out forwards;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  animation: slideDown 1.5s ease-out forwards;
+}
+
+.about-tagline {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #bbb;
+  animation: slideUp 2s ease-out forwards;
+}
+
+/* Content Section */
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-text-block,
+.experience-text-block,
+.vision-text-block,
+.values-text-block {
+  flex: 1;
+  margin: 20px;
+  opacity: 0;
+  transform: translateX(-50px); /* Start from left */
+  animation: slideInRight 1s forwards ease-in-out;
+}
+
+.about-image-block {
+  flex: 1;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(50px); /* Start from right */
+  animation: slideInLeft 1s forwards ease-in-out;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Section Headers */
+.sub-heading {
+  font-size: 2rem;
+  color: #66b3ff;
+  margin-bottom: 20px;
+  text-align: left;
+  border-left: 4px solid #66b3ff;
+  padding-left: 12px;
+  animation: fadeInText 1s ease-in-out;
+}
+
+/* Text Styling */
+.about-text {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+/* Call to Action Section */
+.about-cta {
+  background-color: #333;
+  text-align: center;
+  padding: 40px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.5s ease-in-out forwards;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f9f9f9;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+.cta-button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: #66b3ff;
+  color: #111;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #f9f9f9;
+  transform: scale(1.1);
+}
+
+/* Fade-in Animation for Hero Section */
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-down Animation for Hero Title */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide-up Animation for Hero Tagline */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide-in Animation for Right Text Blocks */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide-in Animation for Left Image Blocks */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade-up Animation for CTA Section */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in for Sub-headings and Text */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-tagline {
+    font-size: 1.2rem;
+  }
+
+  .about-text-block {
+    margin: 20px 0;
+  }
+
+  .about-image {
+    margin-top: 20px;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+  }
+}

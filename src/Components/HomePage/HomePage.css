@@ -1,0 +1,149 @@
+/* General Homepage Styling */
+.homepage {
+  background: url(../../assets/images/bgimg2.png) center center no-repeat;
+  background-size: cover; /* Ensures the background covers the entire section */
+  height: 100vh; /* Ensures the homepage takes full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 2rem;
+  overflow: hidden; /* Hides overflow for a cleaner look */
+  z-index: 0;
+}
+
+.homepage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Overlay to make text stand out more */
+  z-index: -1;
+}
+
+/* Logo Section */
+.homepage__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInLogo 1.5s ease-in-out forwards;
+  margin-top: 2rem;
+}
+
+.homepage__logo-img {
+  width: 15rem;
+  margin: auto;
+  opacity: 0;
+  animation: fadeInLogo 1.5s ease-in-out forwards;
+  z-index: 1;
+}
+
+@keyframes fadeInLogo {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Section */
+.homepage__hero h1 {
+  text-align: center;
+  font-family: "Playwrite DE Grund", cursive;
+  color: #f1f1f1;
+  font-weight: 300;
+  font-size: 2rem;
+  font-style: italic;
+  opacity: 0;
+  animation: slideInText 1.5s ease-in-out forwards 0.5s;
+  z-index: 1;
+}
+
+.homepage__hero p {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #e0e0e0;
+  font-weight: 300;
+  font-size: 1rem;
+  margin: 1rem;
+  opacity: 0;
+  animation: slideInText 1.5s ease-in-out forwards 1s;
+  z-index: 1;
+}
+
+@keyframes slideInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CTA Button Section */
+.homepage__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  opacity: 0;
+  animation: fadeInButton 2s ease-in-out forwards 1.5s;
+}
+
+.homepage__cta-btn {
+  padding: 0.7rem 2.5rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: 2px solid #ffffff;
+  z-index: 1;
+}
+
+.homepage__cta-btn:hover {
+  background-color: #ffffff;
+  transform: translateY(-5px);
+  color: #000000;
+}
+
+@keyframes fadeInButton {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .homepage__hero h1 {
+    font-size: 2rem;
+  }
+
+  .homepage__hero p {
+    font-size: 1rem;
+  }
+
+  .homepage__logo-img {
+    width: 10rem;
+  }
+
+  .homepage__cta-btn {
+    font-size: 0.9rem;
+  }
+}

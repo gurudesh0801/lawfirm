@@ -1,0 +1,140 @@
+/* General Contact Page Styles */
+.contact-page {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  padding: 60px 20px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Collapsible Section Styles */
+.collapsible-section {
+  background-color: #292929;
+  color: #f0f0f0;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid #444;
+}
+
+.collapsible-section:hover {
+  background-color: #333;
+}
+
+.collapsible-section h2 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Icons */
+.collapsible-section h2 i {
+  transition: transform 0.3s ease;
+}
+
+/* Rotating arrow when section is open */
+.collapsible-section.active h2 i {
+  transform: rotate(180deg);
+}
+
+/* Collapsible Content (Hidden by default) */
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.collapsible-content.open {
+  max-height: 500px; /* Adjust as per content */
+  transition: max-height 0.7s ease-in;
+}
+
+.collapsible-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  padding-top: 10px;
+}
+
+/* Form Styling Inside Collapsible Section */
+.collapsible-form .form-group {
+  margin-bottom: 18px;
+  padding: 10px 0;
+}
+
+.collapsible-form .form-group label {
+  font-weight: bold;
+  color: #1596ff;
+  display: block;
+  margin-bottom: 8px;
+  margin-right: 12px;
+}
+
+.collapsible-form .form-group input,
+.collapsible-form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #f0f0f0;
+  font-size: 1rem;
+}
+
+.collapsible-form .form-group input:focus,
+.collapsible-form .form-group textarea:focus {
+  border-color: #ffcc00;
+  outline: none;
+}
+
+/* Button */
+.submit-btn {
+  padding: 12px 20px;
+  background-color: #ffcc00;
+  color: #333;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #ffdd44;
+  transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .collapsible-section {
+    padding: 15px;
+  }
+  .collapsible-section h2 {
+    font-size: 1.5rem;
+  }
+}
