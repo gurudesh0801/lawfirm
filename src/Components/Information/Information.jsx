@@ -76,7 +76,7 @@ const Information = () => {
 
   return (
     <form>
-      <h1>Law Firm Form</h1>
+      <h1>Law Firm Information</h1>
 
       {/* Flexbox container for inputs */}
       <div className="form-group">
