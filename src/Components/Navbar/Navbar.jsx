@@ -22,7 +22,7 @@ const Navbar = () => {
           <a href="/">Home</a>
         </li>
         <li>
-          <a href="https://lawfirmpp.vercel.app/about">About Us</a>
+          <a href="/about">About Us</a>
         </li>
         <li>
           <a href="/services">Services</a>
