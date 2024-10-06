@@ -8,6 +8,11 @@ const Contact = () => {
     setActiveSection(activeSection === section ? null : section);
   };
 
+  // Prevent collapsing when clicking inside the form
+  const stopPropagation = (event) => {
+    event.stopPropagation();
+  };
+
   return (
     <div className="contact-page">
       <div className="contact-container">
@@ -26,7 +31,7 @@ const Contact = () => {
               activeSection === 1 ? "open" : ""
             }`}
           >
-            <form className="collapsible-form">
+            <form className="collapsible-form" onClick={stopPropagation}>
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input type="text" id="name" placeholder="Enter your name" />
