@@ -22,6 +22,7 @@
   text-align: center;
   opacity: 0;
   animation: fadeInHero 2s ease-in-out forwards;
+  background-attachment: fixed;
 }
 
 .about-title {
@@ -34,7 +35,7 @@
 .about-tagline {
   font-size: 1.7rem;
   margin-top: 10px;
-  color: #d8d6d6;
+  color: #bbbbbb;
   animation: slideUp 2s ease-out forwards;
 }
 
