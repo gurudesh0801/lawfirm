@@ -1,8 +1,13 @@
 import React from "react";
 import "./About.css"; // Import the CSS styles
 import img from "../../assets/images/aboutimg.png";
+import img1 from "../../assets/images/aboutimg1.jpg";
 
 const About = () => {
+  const goto = () => {
+    window.location.href = "/contact";
+  };
+
   return (
     <section className="about-us">
       {/* Header Section */}
@@ -12,6 +17,7 @@ const About = () => {
           <p className="about-tagline">
             Dedicated to delivering justice with passion and expertise.
           </p>
+          {/* <img src={img1} alt="" /> */}
         </div>
       </div>
 
@@ -86,7 +92,9 @@ const About = () => {
             Contact us today for a consultation and take the first step toward
             resolving your legal concerns.
           </p>
-          <button className="cta-button">Get in Touch</button>
+          <button className="cta-button" onClick={goto}>
+            Get in Touch
+          </button>
         </div>
       </div>
     </section>
