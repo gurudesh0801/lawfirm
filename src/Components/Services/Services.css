@@ -1,7 +1,8 @@
 /* Black Theme - Law Firm Service Page Layout */
 .service-page {
   padding: 2rem;
-  background-color: #000000; /* Dark background */
+  background: linear-gradient(rgba(14, 14, 14, 0.57), rgba(15, 15, 15, 0.57)),
+    url("../../assets/images/bgimg2.png") center/cover no-repeat;
   color: #e0e0e0; /* Light text for contrast */
   display: flex;
   justify-content: center; /* Centers the content horizontally */
@@ -12,7 +13,7 @@
 }
 
 /* Add Background Animation */
-.service-page::before {
+/* .service-page::before {
   content: "";
   position: absolute;
   top: 0;
@@ -26,8 +27,8 @@
   );
   animation: backgroundAnimation 8s ease-in-out infinite;
   z-index: 0;
-}
-
+} */
+/* 
 @keyframes backgroundAnimation {
   0% {
     transform: translateY(-50%) translateX(0);
@@ -38,7 +39,7 @@
   100% {
     transform: translateY(-50%) translateX(0);
   }
-}
+} */
 
 /* Hero Section */
 .hero-section {
