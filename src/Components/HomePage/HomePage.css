@@ -1,6 +1,7 @@
 /* General Homepage Styling */
 .homepage {
-  background: url(../../assets/images/bgimg2.png) center center no-repeat;
+  background: linear-gradient(rgba(14, 14, 14, 0.6), rgba(15, 15, 15, 0.6)),
+    url("../../assets/images/img4.jpg") center/cover no-repeat;
   background-size: cover; /* Ensures the background covers the entire section */
   height: 100vh; /* Ensures the homepage takes full height of the viewport */
   display: flex;
